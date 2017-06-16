@@ -30,19 +30,19 @@ class profilePanel extends Controller
     }
 
     function _getCountToday(){
-        $this->requestCount = DB::table('request')
+        $this->requestCount = DB::table('Request')
             ->where('created_at','>',DB::raw('concat(curdate())'))
             ->where('partnerCode',$this->partnerCode)
             ->count();
     }
     function _getCountRequest(){
-        $this->allRequest = DB::table('request')
+        $this->allRequest = DB::table('Request')
             ->where('created_at','>',1)
             ->where('partnerCode',$this->partnerCode)
             ->count();
     }
     function _getResSuccess(){
-        $this->resSuccess = DB::table('response')
+        $this->resSuccess = DB::table('Response')
             ->where('created_at','>',1)
             ->where('partnerCode',$this->partnerCode)
             ->count();
