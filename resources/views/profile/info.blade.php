@@ -24,13 +24,10 @@
 
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
-                                    <b>Số Dư</b> <a class="pull-right">{{ Auth::user()->money }}</a>
+                                    <b>Mã Đối Tác: </b> <p>{{ Auth::user()->partnerCode }}</p>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Ngày Thanh Toán</b> <a class="pull-right">543</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <b>Demo 2</b> <a class="pull-right">13,287</a>
+                                    <b>Số Dư: </b> <a class="pull-right">{{ Auth::user()->money }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -93,12 +90,9 @@
                                         <!-- small box -->
                                         <div class="small-box bg-aqua">
                                             <div class="inner">
-                                                <h3>150</h3>
+                                                <h3>{{ Auth::user()->money }}</h3>
 
                                                 <p>Số Dư Còn Lại</p>
-                                            </div>
-                                            <div class="icon">
-                                                <i class="ion ion-bag"></i>
                                             </div>
                                             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                                         </div>
@@ -108,12 +102,9 @@
                                         <!-- small box -->
                                         <div class="small-box bg-green">
                                             <div class="inner">
-                                                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                                <h3>{{$countToday}}</h3>
 
                                                 <p>Số Lần Mua Thẻ Hôm Nay</p>
-                                            </div>
-                                            <div class="icon">
-                                                <i class="ion ion-stats-bars"></i>
                                             </div>
                                             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                                         </div>
@@ -123,12 +114,20 @@
                                         <!-- small box -->
                                         <div class="small-box bg-yellow">
                                             <div class="inner">
-                                                <h3>44</h3>
+                                                <h3>{{$allRequest}}</h3>
 
                                                 <p>Tổng Đã Mua Thẻ</p>
                                             </div>
-                                            <div class="icon">
-                                                <i class="ion ion-person-add"></i>
+                                            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-xs-6">
+                                        <!-- small box -->
+                                        <div class="small-box bg-maroon">
+                                            <div class="inner">
+                                                <h3>{{$allResponse}}</h3>
+
+                                                <p>Tổng số lần yêu cầu</p>
                                             </div>
                                             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                                         </div>

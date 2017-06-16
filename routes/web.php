@@ -11,16 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index')->middleware('auth')->name('home');
+
+Route::prefix('search')->group(function (){
+    Route::get('buyprepaid', 'HistoryPanel@_searchHistory')->middleware('auth');
 });
-Route::get('/gtv',function (){
-    return view('home');
+
+Route::prefix('admin')->group(function () {
+
+    Route::get('profile', 'profilePanel@_getBasicInfo')->middleware('auth');
+
+    Route::get('change-password', 'profilePanel@_getBasicInfo')->middleware('auth');
+
+    Route::get('history-buyprepaid', 'HistoryPanel@_getTodayRequest')->middleware('auth');
+
+    Route::get('history-recharge', 'HistoryPanel@_getBasicInfo')->middleware('auth');
+
+    Route::get('recharge-buyprepaid', 'RechargePanel@_getBasicInfo')->middleware('auth');
+
+    Route::get('recharge-money', 'RechargePanel@_getBasicInfo')->middleware('auth');
+
+    Route::get('guide-api', 'GuidePanel@_getBasicInfo');
+
+    Route::get('guide-recharge', 'GuidePanel@_getBasicInfo');
+
 });
-Route::get('admin/profile', function () {
-    //
-    return view('profile.info');
-})->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

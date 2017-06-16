@@ -172,7 +172,7 @@ return [
         ],
         [
             'text'        => 'Lịch sử nạp tiền',
-            'url'         => 'admin/history-recharge',
+            'url'         => '#',
             'icon'        => 'search',
             'label'       => 2,
             'label_color' => 'success',
@@ -181,13 +181,13 @@ return [
         'Dịch Vụ',
         [
             'text'        => 'Nạp thẻ cào',
-            'url'         => 'admin/recharge-prepaid',
+            'url'         => '#',
             'icon'        => 'mobile-phone',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Nạp Tiền',
-            'url'         => 'admin/recharge-money',
+            'url'         => '#',
             'icon'        => 'money',
             'label_color' => 'success',
         ],
@@ -204,14 +204,14 @@ return [
         ],
         [
             'text'        => 'Hướng Dẫn Nạp Tiền',
-            'url'         => 'admin/guide-recharge',
+            'url'         => '#',
             'icon'        => 'book',
             'label_color' => 'success',
         ],
         'Liên Hệ',
         [
             'text'        => 'Liên Hệ',
-            'url'         => 'admin/contacts',
+            'url'         => '#',
             'icon'        => 'phone',
             'label_color' => 'success',
         ]
