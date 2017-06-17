@@ -12,7 +12,7 @@ class HistoryPanel extends Controller
 {
     //
     protected $partnerCode = '';
-
+    //Fix Something
     protected function _getTodayRequest(){
         $this->partnerCode = Auth::user()->partnerCode;
         $todayRequest = DB::table('Request')

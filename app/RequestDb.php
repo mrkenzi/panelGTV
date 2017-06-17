@@ -10,7 +10,7 @@ class RequestDb extends Model
     protected $fillable = [
         'transId', 'partnerCode', 'refName','func','telco','cardPrice','cardQuanlity','created_at','updated_at'
     ];
-    protected $table = 'request';
+    protected $table = 'Request';
     public function scopeOfTransId($query, $input)
     {
         return $query->where('transId', $input);
