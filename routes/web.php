@@ -13,9 +13,18 @@
 
 Route::get('/', 'HomeController@index')->middleware('auth')->name('home');
 
+Auth::routes();
 Route::prefix('search')->group(function (){
     Route::get('buyprepaid', 'HistoryPanel@_searchHistory')->middleware('auth');
 });
+
+Route::resource('users', 'UserController');
+
+Route::resource('roles', 'RoleController');
+
+Route::resource('permissions', 'PermissionController');
+
+Route::resource('posts', 'PostController');
 
 Route::prefix('admin')->group(function () {
 
@@ -37,6 +46,6 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
