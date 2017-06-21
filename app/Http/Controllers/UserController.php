@@ -9,6 +9,7 @@ use Auth;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Session;
+use Faker\Factory as Faker;
 
 class UserController extends Controller
 {
@@ -53,8 +54,13 @@ class UserController extends Controller
             'email'=>'required|email|unique:users',
             'password'=>'required|min:6|confirmed'
         ]);
-
-        $user = User::create($request->only('email', 'name', 'password'));
+        $faker = Faker::create();
+        $data_save = ['name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>bcrypt($request->password),
+            'partnerCode' => $faker->uuid,
+            'money'=>0];
+        $user = User::create($data_save);
 
         $roles = $request['roles'];
 
@@ -111,7 +117,8 @@ class UserController extends Controller
             'password'=>'required|min:6|confirmed'
         ]);
 
-        $input = $request->only(['name', 'email', 'password']);
+        bcrypt($request->password);
+        $input = ['name'=>$request->name,'email'=>$request->email,'password'=>bcrypt($request->password)];
         $roles = $request['roles'];
         $user->fill($input)->save();
 

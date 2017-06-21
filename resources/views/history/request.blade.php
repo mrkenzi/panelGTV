@@ -12,7 +12,7 @@
         <li class="active">Lịch Sử Giao Dịch</li>
     </ol>
 @stop
-
+@include('layouts.sidebar')
 @section('content')
     <div class="row">
         <div class="col-xs-12">
@@ -21,7 +21,7 @@
                     <h3 class="box-title">Thống Kê Yêu Cầu Mua Thẻ - Ngày: {{date("Y/m/d")}}</h3>
                     <div class="box box-info">
                         <div class="box-body">
-                            {{ Form::open(['method' =>'GET','url' => ['search/buyprepaid']])}}
+                            {{ Form::open(['method' =>'GET','url' => ['history/q']])}}
                             <div class="row">
                                 <div class="col-xs-2">
                                     {{Form::text('transId',null,['placeholder'=>'Tìm Theo Mã Giao Dịch', 'class'=>'form-control'])}}
@@ -30,10 +30,10 @@
                                     {{Form::text('func',null,['placeholder'=>'Tìm Theo Hàm Kết Nối', 'class'=>'form-control'])}}
                                 </div>
                                 <div class="col-xs-2">
-                                    {{Form::select('telco', ['VTT' => 'Viettel', 'VMS' => 'MobiFone', 'VNP' => 'Vinaphone', 'VNM' => 'Vietnam Mobile', 'GTEL' => 'Gmobile', 'SFONE' => 'Sfone'],null,['class'=>'form-control','placeholder' => 'Chọn nhà mạng tìm kiếm'])}}
+                                    {{Form::select('telco', ['VTT' => 'Viettel', 'VMS' => 'MobiFone', 'VNP' => 'Vinaphone', 'VNM' => 'Vietnam Mobile', 'GTEL' => 'Gmobile', 'SFONE' => 'Sfone',''=>'Tất cả nhà mạng'],null,['class'=>'form-control','placeholder' => 'Chọn nhà mạng tìm kiếm'])}}
                                 </div>
                                 <div class="col-xs-2">
-                                    {{Form::select('cardPrice', ['10000' => 'Thẻ 10.000', '20000' => 'Thẻ 20.000', '30.000' => 'Thẻ 30000', '50000' => 'Thẻ 50.000', '100000' => 'Thẻ 100.000', '200000' => 'Thẻ 200.000', '500000' => 'Thẻ 500.000'],null,['class'=>'form-control','placeholder' => 'Tìm Theo mệnh giá thẻ'])}}
+                                    {{Form::select('cardPrice', ['10000' => 'Thẻ 10.000', '20000' => 'Thẻ 20.000', '30.000' => 'Thẻ 30000', '50000' => 'Thẻ 50.000', '100000' => 'Thẻ 100.000', '200000' => 'Thẻ 200.000', '500000' => 'Thẻ 500.000',''=>'Tất cả mệnh giá'],null,['class'=>'form-control','placeholder' => 'Tìm Theo mệnh giá thẻ'])}}
                                 </div>
                                 <div class="col-xs-4">
                                     {{Form::submit('Tìm Kiếm',['class'=>'btn btn-block btn-success btn-flat'])}}

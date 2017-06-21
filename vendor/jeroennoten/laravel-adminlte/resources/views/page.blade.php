@@ -93,7 +93,7 @@
 
                 <!-- Sidebar Menu -->
                 <ul class="sidebar-menu">
-                    @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
+                    @yield('sidebarmenu')
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>

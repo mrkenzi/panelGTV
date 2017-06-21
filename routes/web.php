@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->middleware('auth')->name('home');
+Route::get('/', 'profilePanel@index')->name('home');
 
 Auth::routes();
 Route::prefix('search')->group(function (){
@@ -26,26 +26,18 @@ Route::resource('permissions', 'PermissionController');
 
 Route::resource('posts', 'PostController');
 
-Route::prefix('admin')->group(function () {
+Route::resource('profile', 'profilePanel');
 
-    Route::get('profile', 'profilePanel@_getBasicInfo')->middleware('auth');
+Route::get('history','HistoryPanel@index');
 
-    Route::get('change-password', 'profilePanel@_getBasicInfo')->middleware('auth');
+Route::get('history/q','HistoryPanel@_searchHistory');
 
-    Route::get('history-buyprepaid', 'HistoryPanel@_getTodayRequest')->middleware('auth');
+Route::get('history-recharge', 'HistoryPanel@_getBasicInfo')->middleware('auth');
 
-    Route::get('history-recharge', 'HistoryPanel@_getBasicInfo')->middleware('auth');
+Route::get('recharge-buyprepaid', 'RechargePanel@_getBasicInfo')->middleware('auth');
 
-    Route::get('recharge-buyprepaid', 'RechargePanel@_getBasicInfo')->middleware('auth');
+Route::get('recharge-money', 'RechargePanel@_getBasicInfo')->middleware('auth');
 
-    Route::get('recharge-money', 'RechargePanel@_getBasicInfo')->middleware('auth');
+Route::get('guide-api', 'GuidePanel@_getBasicInfo');
 
-    Route::get('guide-api', 'GuidePanel@_getBasicInfo');
-
-    Route::get('guide-recharge', 'GuidePanel@_getBasicInfo');
-
-});
-
-
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('guide-recharge', 'GuidePanel@_getBasicInfo');

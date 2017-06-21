@@ -14,7 +14,7 @@ class ClearanceMiddleware {
      * @return mixed
      */
     public function handle($request, Closure $next) {
-        if (Auth::user()->hasPermissionTo('Administer roles & permissions')) {
+        if (Auth::user()->hasPermissionTo('Administer')) {
             return $next($request);
         }
 

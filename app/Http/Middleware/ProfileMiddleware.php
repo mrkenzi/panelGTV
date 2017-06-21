@@ -4,9 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use App\User;
-
-class AdminMiddleware
+class ProfileMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,10 +15,15 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $user = User::all()->count();
-        if (!($user == 1)) {
-            if (!Auth::user()->hasPermissionTo('Administer')) {
+        if (Auth::user()->hasPermissionTo('userInfo')) {
+            return $next($request);
+        }
+
+        if ($request->is('profile/*/edit')) {
+            if (!Auth::user()->hasPermissionTo('userInfo')) {
                 abort('401');
+            } else {
+                return $next($request);
             }
         }
 

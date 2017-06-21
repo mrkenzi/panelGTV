@@ -12,14 +12,19 @@ class HistoryPanel extends Controller
 {
     //
     protected $partnerCode = '';
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     //Fix Something
-    protected function _getTodayRequest(){
+
+    protected function index(){
         $this->partnerCode = Auth::user()->partnerCode;
         $todayRequest = DB::table('Request')
             ->join('Response', function ($join) {
                 $join->on('Request.transId', '=', 'Response.transId')
-                    ->where('Request.partnerCode', $this->partnerCode)
-                    ->where('Request.created_at', '>=',DB::raw('concat(curdate())'));
+                    ->where('Request.partnerCode', $this->partnerCode);
             })
             ->orderBy('Request.created_at', 'desc')
             ->select('Request.*', 'Response.*')
@@ -28,6 +33,7 @@ class HistoryPanel extends Controller
     }
 
     protected function _searchHistory(Request $rq){
+        $this->partnerCode = Auth::user()->partnerCode;
         $query = RequestDb::query();
         $query->join('Response','Request.transId', '=', 'Response.transId');
         $query->where('Request.partnerCode', $this->partnerCode);
@@ -48,9 +54,7 @@ class HistoryPanel extends Controller
             $query->where('Request.cardPrice', intval($rq['cardPrice']));
             $msgResult .="- Giá trị thẻ:".$rq['cardPrice'];
         }
-
         $results = $query->paginate(10);
-        //dd($results);
         return view('history.result',['dataResults'=> $results,'msgResult'=>$msgResult]);
     }
 }

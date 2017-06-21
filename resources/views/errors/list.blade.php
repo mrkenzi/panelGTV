@@ -7,3 +7,13 @@
 	    </ul>
 	</div>
 @endif
+@if (isset($error_message))
+	<div class="alert alert-danger">
+		<p>{{ $error_message }}</p>
+	</div>
+@endif
+@if (isset($success_message))
+	<div class="alert alert-success">
+		<p>{{ $success_message }}</p>
+	</div>
+@endif
