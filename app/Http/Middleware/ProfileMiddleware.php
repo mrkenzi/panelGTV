@@ -15,9 +15,9 @@ class ProfileMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::user()->hasPermissionTo('userInfo')) {
+        /*if (Auth::user()->hasPermissionTo('userInfo')) {
             return redirect()->route('home');
-        }
+        }*/
 
         if ($request->is('profile/*/edit')) {
             if (!Auth::user()->hasPermissionTo('userInfo')) {
