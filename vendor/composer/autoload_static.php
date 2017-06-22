@@ -84,6 +84,7 @@ class ComposerStaticInitc550bfd7132b79e7b76e94d2c5742b5d
         ),
         'F' => 
         array (
+            'Fx3costa\\LaravelChartJs\\' => 24,
             'Faker\\' => 6,
         ),
         'D' => 
@@ -223,6 +224,10 @@ class ComposerStaticInitc550bfd7132b79e7b76e94d2c5742b5d
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
+        'Fx3costa\\LaravelChartJs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fx3costa/laravelchartjs/src',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
@@ -307,12 +312,23 @@ class ComposerStaticInitc550bfd7132b79e7b76e94d2c5742b5d
         'App\\Http\\Controllers\\GuidePanel' => __DIR__ . '/../..' . '/app/Http/Controllers/GuidePanel.php',
         'App\\Http\\Controllers\\HistoryPanel' => __DIR__ . '/../..' . '/app/Http/Controllers/HistoryPanel.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\PermissionController' => __DIR__ . '/../..' . '/app/Http/Controllers/PermissionController.php',
+        'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
+        'App\\Http\\Controllers\\QlgdController' => __DIR__ . '/../..' . '/app/Http/Controllers/QlgdController.php',
         'App\\Http\\Controllers\\RechargePanel' => __DIR__ . '/../..' . '/app/Http/Controllers/RechargePanel.php',
+        'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+        'App\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',
         'App\\Http\\Controllers\\profilePanel' => __DIR__ . '/../..' . '/app/Http/Controllers/profilePanel.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AdminMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminMiddleware.php',
+        'App\\Http\\Middleware\\ClearanceMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ClearanceMiddleware.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\MTransMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/MTransMiddleware.php',
+        'App\\Http\\Middleware\\ProfileMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ProfileMiddleware.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
+        'App\\Http\\Middleware\\UsersMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/UsersMiddleware.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -333,7 +349,9 @@ class ComposerStaticInitc550bfd7132b79e7b76e94d2c5742b5d
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'CreateAlegoResponseTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_14_070759_create_alego_response_table.php',
+        'CreatePartnerTypeTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_22_103823_create_partner_type_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePermissionTables' => __DIR__ . '/../..' . '/database/migrations/2017_06_20_082035_create_permission_tables.php',
         'CreateRequestTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_13_040240_create_request_table.php',
         'CreateResponseTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_13_040604_create_response_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
@@ -777,6 +795,8 @@ class ComposerStaticInitc550bfd7132b79e7b76e94d2c5742b5d
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'Fx3costa\\LaravelChartJs\\Builder' => __DIR__ . '/..' . '/fx3costa/laravelchartjs/src/Builder.php',
+        'Fx3costa\\LaravelChartJs\\Providers\\ChartjsServiceProvider' => __DIR__ . '/..' . '/fx3costa/laravelchartjs/src/Providers/ChartjsServiceProvider.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',

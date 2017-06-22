@@ -20,8 +20,7 @@ class profilePanel extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth', 'profile'])
-            ->except('index', 'show');
+        $this->middleware(['auth', 'profile']);
     }
 
     protected function edit($id)

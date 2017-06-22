@@ -59,5 +59,7 @@ class Kernel extends HttpKernel
         'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
         'clearance' => \App\Http\Middleware\ClearanceMiddleware::class,
         'profile' => \App\Http\Middleware\ProfileMiddleware::class,
+        'mTrans' => \App\Http\Middleware\MTransMiddleware::class,
+        'usersManager' => \App\Http\Middleware\UsersMiddleware::class,
     ];
 }

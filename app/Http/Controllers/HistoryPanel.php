@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\RequestDb;
-use App\ResponseDb;
 use Illuminate\Support\Facades\DB;
 
 class HistoryPanel extends Controller
@@ -14,7 +13,7 @@ class HistoryPanel extends Controller
     protected $partnerCode = '';
     public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['auth', 'profile']);
     }
 
     //Fix Something

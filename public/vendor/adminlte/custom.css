@@ -1,0 +1,19 @@
+.box.box-info {
+    border-bottom-color: #00c0ef;
+    margin-bottom: 0px;
+}
+.content{
+    padding: 10px;
+}
+.normal-type {
+    color: black;
+}
+.gold-type {
+    color: gold;
+}
+.platinum-type{
+    color: royalblue;
+}
+.diamond-type{
+    color: red;
+}

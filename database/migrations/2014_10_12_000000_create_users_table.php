@@ -19,9 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
             $table->string('partnerCode',64);
-            $table->integer('money');
+            $table->integer('typePartner')->default(1);
+            $table->integer('sumUsed')->default(0);
+            $table->integer('active')->default(1);
+            $table->timestamps();
         });
     }
 

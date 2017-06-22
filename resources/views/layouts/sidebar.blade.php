@@ -1,41 +1,41 @@
 @section('sidebarmenu')
     @can('Administer')
-        <li class="header">Quản Lý Hệ Thống Panel</li>
+        {{--<li class="header">Quản Lý Hệ Thống Panel</li>
         <li class="">
-            <a href="/trans-manager">
+            <a href="/permission-manager">
                 <i class="fa fa-fw fa-cogs" aria-hidden="true"></i>
                 <span>Tùy Chỉnh Permissions</span>
             </a>
         </li>
         <li class="">
-            <a href="/trans-manager">
+            <a href="/roles-manager">
                 <i class="fa fa-fw fa-cogs" aria-hidden="true"></i>
                 <span>Tùy Chỉnh Roles</span>
             </a>
-        </li>
+        </li>--}}
     @endcan
     @can('notificationManager')
-        <li class="header">Quản Lý Thông Báo</li>
+        {{--<li class="header">Quản Lý Thông Báo</li>
         <li class="">
-            <a href="/trans-manager">
+            <a href="/notification-manager">
                 <i class="fa fa-fw fa-bullhorn "></i>
                 <span>Danh Sách Khách Hàng</span>
             </a>
-        </li>
+        </li>--}}
     @endcan
     @can('buyinManager')
-        <li class="header">Quản Lý Hạn Mức</li>
+        {{--<li class="header">Quản Lý Hạn Mức</li>
         <li class="">
-            <a href="/trans-manager">
+            <a href="/buyin-manager">
                 <i class="fa fa-fw fa-diamond "></i>
-                <span>Truy Cập Khách Hàng</span>
+                <span>Danh Sách Hạn Mức</span>
             </a>
-        </li>
+        </li>--}}
     @endcan
     @can('usersManager')
         <li class="header">Quản Lý Khách Hàng</li>
         <li class="">
-            <a href="/trans-manager">
+            <a href="/users-manager">
                 <i class="fa fa-fw fa-user "></i>
                 <span>Danh Sách Khách Hàng</span>
             </a>
